@@ -13,5 +13,5 @@ void main() {
     else
       b = b - a;
   }
-  print(' BCLN bằng $a');
+  print(' uCLN bằng $a');
 }

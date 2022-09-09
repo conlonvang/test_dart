@@ -1,27 +1,22 @@
 import 'dart:io';
 import 'dart:math';
+import 'package:test/test.dart';
 
-// Kiểm tra số nguyên tố (vẫn bị lỗi)
+// Kiểm tra số nguyên tố 
 void main() {
-  stdout.write('nhập số n:');
-  int n = int.parse(stdin.readLineSync()!);
-  if (n < 2) {
-    print(' $n không phải là số nguyên tố');
-  } else {
-    int mark = 0;
-    for (int i = 2;
-        i <= sqrt(n);
-        i++) /*{
-      if (n % i == 0) {
-        mark = 0;
+  String soNguyenTo(int n) {
+    int kq = 0;
+    if (n < 2) {
+      return "khong la so nguyen to";
+    } else {
+      for (int i = 2; i <= sqrt(n); i++) {
+        kq += i;
       }
-    }*/
-    {
-      if (n % i == 0) {
-        print('$n là số nguyên tố');
-      } else {
-        print('$n không là số nguyên tố');
-      }
+      return "la so nguyen to";
     }
   }
+
+  test('nhap so 13 mong muon khong la so nguyen to', () {
+    expect(soNguyenTo(13), "khong la so nguyen to");
+  });
 }

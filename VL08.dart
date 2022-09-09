@@ -1,25 +1,35 @@
 import 'dart:io';
+import 'package:test/test.dart';
 
 //tính tổng các số chẵn trong khoảng [a,b]
 void main() {
-  stdout.write('nhập số a:');
-  int a = int.parse(stdin.readLineSync()!);
-  stdout.write('nhập số b:');
-  int b = int.parse(stdin.readLineSync()!);
-  if (a <= 1) {
-    print('$a!=1');
-  } else {
-    int temp = a;
-    if (a % 2 != 0) a++;
-    if (b % 2 != 0) b--;
-    for (int i = a; i < b; i += 2) {
-      stdout.write(i);
-      stdout.write('+');
-      temp += i;
+  int tinhTongSoChan(int a, int b) {
+    int? max;
+    int? min;
+    if (a > b) {
+      max = a;
+      min = b;
+    } else {
+      max = b;
+      min = a;
     }
-    ;
-    stdout.write(b);
-    stdout.write('=');
-    stdout.write(temp);
+    int kq = 0;
+
+    for (int i = min; i <= max;) {
+      if (i % 2 != 0) {
+        i++;
+        continue;
+      }
+      kq += i;
+      i += 2;
+    }
+    return kq;
   }
+
+  test('tu so 1 den 5 mong muon 6', () {
+    expect(tinhTongSoChan(1, 5), 6);
+  });
+  test('tu so -1 den -5 mong muon -6', () {
+    expect(tinhTongSoChan(-1, -5), -6);
+  });
 }
