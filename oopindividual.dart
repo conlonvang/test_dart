@@ -1,10 +1,9 @@
-
 class Dividual {
   //khai báo thuộc tính
   String hoTen = "";
   String ngaySinh = "";
   String lop = "";
-  int tuoi=0;
+  int tuoi = 0;
   dividual({int tuoi = 0}) {
     //khai báo hàm khởi tạo
     this.hoTen = 'hoTen';
@@ -49,14 +48,14 @@ class Dividual {
     this.tuoi = tuoi;
   }*/
 
-  void main() {
-    //khai báo các phương thức
-    var dividual = new Dividual();
-    dividual.hoTen = "phạm tiến dũng";
-    dividual.ngaySinh = "15/08/2003";
-    dividual.lop = "CNTT K66B1";
-    dividual.tuoi = 19;
-    print(dividual.hoTen);
-  }
 }
 
+void main() {
+  //khai báo các phương thức
+  var dividual = new Dividual();
+  dividual.hoTen = "phạm tiến dũng";
+  dividual.ngaySinh = "15/08/2003";
+  dividual.lop = "CNTT K66B1";
+  dividual.tuoi = 19;
+  print(dividual.hoTen);
+}

@@ -1,7 +1,7 @@
 class HocSinh {
   String hoTen = '';
   String lop = '';
-  
+  String _ngaySinh = "";
   double? diemToan;
   double? diemVan;
   double? diemAnh;
@@ -10,7 +10,7 @@ class HocSinh {
   HocSinh() {
     this.hoTen = "hoTen";
     this.lop = "lop";
-    
+
     this.diemToan = diemToan;
     this.diemVan = diemVan;
     this.diemAnh = diemAnh;
@@ -19,12 +19,10 @@ class HocSinh {
   // in thông tin
 
   void inThongTin() {
-    
     print("Họ Tên: ${this.hoTen}" +
         "\n" +
         "Lớp: ${this.lop}" +
         "\n" +
-       
         "Điểm Toán: ${this.diemToan}" +
         "\n" +
         "Điểm Văn: ${this.diemVan}" +
@@ -35,7 +33,7 @@ class HocSinh {
 
   // Tính điểm trung bình
   double tinhDiemTrungBinh() =>
-     return ((this.diemToan + this.diemVan  +this.diemAnh) / 3);
+      ((this.diemToan! + this.diemVan! + this.diemAnh!) / 3);
 
   // Xếp loại Học Sinh
   String xepLoai() {
